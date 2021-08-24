@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
+import { Provider } from 'mobx-react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer, DefaultTheme, ExtendedTheme } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
+import store from 'src/stores';
 
 import { AppProviders } from 'src/context';
 
@@ -24,11 +26,13 @@ const App: FC = () => {
   };
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer theme={MyTheme}>
-        <Routes />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <Provider rootStore={store}>
+      <SafeAreaProvider>
+        <NavigationContainer theme={MyTheme}>
+          <Routes />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </Provider>
   );
 };
 
