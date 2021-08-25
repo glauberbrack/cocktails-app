@@ -21,7 +21,7 @@
 - [ ] Refactor
 - [ ] Chore
 
-## Testando em 🧐
+## Testando em: 🧐
 
 <!-- mobile -->
 - [ ] Navegador Safari
